@@ -13,7 +13,7 @@ data:
 model:
   k_min: 2 # Mínimo de clusters a serem testados
   k_max: 20 # Máximo de clusters a serem testados
-  init: "k-means++" # Inicialização dos centros dos clusters
+  init: "k-means++" # método de inicialização dos centros dos clusters
   n_init: 10 # Número de vezes que o algoritmo será executado com diferentes centros iniciais
   max_iter: 300 # Número máximo de iterações do algoritmo
 
