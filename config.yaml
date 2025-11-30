@@ -1,0 +1,22 @@
+data:
+  # Escolha entre 'csv' ou 'sklearn'
+  source_type: "sklearn"
+  
+  # Nome do dataset se source_type for 'sklearn' (iris, wine, etc.)
+  dataset_name: "iris"
+  
+  # Caminho do dataset se source_type for 'csv'
+  filepath: "data/dataset.csv"
+  
+  random_state: 42
+
+model:
+  k_min: 2
+  k_max: 20
+  init: "k-means++"
+  n_init: 10
+  max_iter: 300
+
+visualization:
+  style: "seaborn-v0_8-darkgrid"
+  palette: "plasma"
