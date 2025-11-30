@@ -37,12 +37,8 @@ def main():
         )
         kmeans.fit(X)
         
-        # Coeficiente de Silhueta
-        if k > 1 and k < X.shape[0]:
-            score = silhouette_score(X, kmeans.labels_)
-        else:
-            score = -1
-            
+        # Calcula o coeficiente de silhueta
+        score = silhouette_score(X, kmeans.labels_)
         silhouette_scores.append(score)
         
         print(f"k={k} | Silhueta={score:.4f}")
