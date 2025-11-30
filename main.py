@@ -70,12 +70,14 @@ def main():
     labels = final_model.fit_predict(X)
     centers = final_model.cluster_centers_
     
-    # Passamos o X completo, o Visualizer cuidará de pegar apenas as 2 primeiras colunas
+    # Visualização 2D (usa as 2 primeiras features)
     viz.plot_final_clusters(X, labels, centers, best_k, feature_names)
     
-    # Visualização 3D (usa as 3 primeiras features)
+    # Visualização 3D (usa as 3 primeiras features se disponíveis)
     if X.shape[1] >= 3:
         viz.plot_final_clusters_3d(X, labels, centers, best_k, feature_names)
+    else:
+        print("Não é possível visualizar em 3D, pois o dataset tem menos de 3 features.")
 
 if __name__ == "__main__":
     main()
