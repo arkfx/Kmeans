@@ -47,7 +47,7 @@ def main():
         
         print(f"k={k} | Silhueta={score:.4f}")
 
-    # 5. Determinação Automática do melhor k baseado na Silhueta
+    # 5. Calcula o melhor k baseado no coeficiente de silhueta
     best_k_idx = np.argmax(silhouette_scores)
     best_k = k_range[best_k_idx]
     
@@ -62,7 +62,9 @@ def main():
     print(f"Gerando visualização final para k={best_k}...")
     final_model = KMeans(
         n_clusters=best_k,
+        init=config['model']['init'],
         n_init=config['model']['n_init'],
+        max_iter=config['model']['max_iter'],
         random_state=config['data']['random_state']
     )
     labels = final_model.fit_predict(X)
